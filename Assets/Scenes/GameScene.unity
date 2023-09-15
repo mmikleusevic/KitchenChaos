@@ -623,6 +623,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearCounter (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6727622422065595937, guid: 42869728e71430c4ab811a9b02ba752d,
+        type: 3}
+      propertyPath: tomatoPrefab
+      value: 
+      objectReference: {fileID: 5656168885311630965, guid: f698d1fa17869e34abbf3029f472903e,
+        type: 3}
+    - target: {fileID: 6727622422065595937, guid: 42869728e71430c4ab811a9b02ba752d,
+        type: 3}
+      propertyPath: kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a9a4cd83b91d294a9063d6404b8d78d,
+        type: 2}
     - target: {fileID: 8765793954899644854, guid: 42869728e71430c4ab811a9b02ba752d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -986,6 +998,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 6727622422065595937, guid: 42869728e71430c4ab811a9b02ba752d,
+        type: 3}
+      propertyPath: kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 88bd86f3ca80635439472c63b74a88e4,
+        type: 2}
     - target: {fileID: 8765793954899644854, guid: 42869728e71430c4ab811a9b02ba752d,
         type: 3}
       propertyPath: m_LocalPosition.x
