@@ -625,6 +625,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6727622422065595937, guid: 42869728e71430c4ab811a9b02ba752d,
         type: 3}
+      propertyPath: testing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727622422065595937, guid: 42869728e71430c4ab811a9b02ba752d,
+        type: 3}
       propertyPath: tomatoPrefab
       value: 
       objectReference: {fileID: 5656168885311630965, guid: f698d1fa17869e34abbf3029f472903e,
@@ -635,6 +640,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 2a9a4cd83b91d294a9063d6404b8d78d,
         type: 2}
+    - target: {fileID: 6727622422065595937, guid: 42869728e71430c4ab811a9b02ba752d,
+        type: 3}
+      propertyPath: secondClearCounter
+      value: 
+      objectReference: {fileID: 1524117221}
     - target: {fileID: 8765793954899644854, guid: 42869728e71430c4ab811a9b02ba752d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -939,6 +949,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1524117221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6727622422065595937, guid: 42869728e71430c4ab811a9b02ba752d,
+    type: 3}
+  m_PrefabInstance: {fileID: 388047415004284375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c0ec9abead26b0479995dbb41de2b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1711478713
