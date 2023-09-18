@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatesCounter : BaseCounter
@@ -18,11 +16,11 @@ public class PlatesCounter : BaseCounter
     private void Update()
     {
         spawnPlateTimer += Time.deltaTime;
-        if(spawnPlateTimer > spawnPlateTimerMax)
+        if (spawnPlateTimer > spawnPlateTimerMax)
         {
             spawnPlateTimer = 0f;
 
-            if(platesSpawnedAmount < platesSpawnedAmountMax)
+            if (platesSpawnedAmount < platesSpawnedAmountMax)
             {
                 platesSpawnedAmount++;
 
@@ -35,7 +33,7 @@ public class PlatesCounter : BaseCounter
     {
         if (!player.HasKitchenObject())
         {
-            if(platesSpawnedAmount > 0)
+            if (platesSpawnedAmount > 0)
             {
                 platesSpawnedAmount--;
 
