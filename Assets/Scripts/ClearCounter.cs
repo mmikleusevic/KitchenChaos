@@ -19,7 +19,7 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
         }
         else
         {
-            if(player.HasKitchenObject())
+            if (player.HasKitchenObject())
             {
 
             }
