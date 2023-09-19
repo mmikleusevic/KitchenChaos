@@ -9,7 +9,7 @@ public class GameInput : MonoBehaviour
 
     private void Awake()
     {
-        playerInputActions = new PlayerInputActions();               
+        playerInputActions = new PlayerInputActions();
     }
 
     private void OnEnable()
@@ -40,7 +40,7 @@ public class GameInput : MonoBehaviour
     {
         Vector2 inputVector = new Vector2();
 
-        if(playerInputActions != null)
+        if (playerInputActions != null)
         {
             inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
 

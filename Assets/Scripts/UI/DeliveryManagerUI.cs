@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeliveryManagerUI : MonoBehaviour
@@ -33,7 +31,7 @@ public class DeliveryManagerUI : MonoBehaviour
 
     private void UpdateVisual()
     {
-        foreach(Transform child in container)
+        foreach (Transform child in container)
         {
             if (child == recipeTemplate) continue;
             Destroy(child.gameObject);
@@ -41,7 +39,7 @@ public class DeliveryManagerUI : MonoBehaviour
 
         foreach (RecipeSO recipeSO in DeliveryManager.Instance.GetWaitingRecipeSOList())
         {
-            Transform recipeTransform =  Instantiate(recipeTemplate, container);
+            Transform recipeTransform = Instantiate(recipeTemplate, container);
             recipeTransform.gameObject.SetActive(true);
             recipeTransform.GetComponent<DeliveryManagerSingleUI>().SetRecipeSO(recipeSO);
         }
