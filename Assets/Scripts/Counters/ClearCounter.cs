@@ -30,7 +30,7 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
                 }
                 else
                 {
-                    if(GetKitchenObject().TryGetPlate(out plateKitchenObject))
+                    if (GetKitchenObject().TryGetPlate(out plateKitchenObject))
                     {
                         if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO()))
                         {
