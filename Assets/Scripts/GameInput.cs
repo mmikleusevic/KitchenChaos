@@ -9,11 +9,21 @@ public class GameInput : MonoBehaviour
 
     private void Awake()
     {
-        playerInputActions = new PlayerInputActions();
-        playerInputActions.Player.Enable();
+        playerInputActions = new PlayerInputActions();               
+    }
 
+    private void OnEnable()
+    {
+        playerInputActions.Player.Enable();
         playerInputActions.Player.Interact.performed += Interact_performed;
         playerInputActions.Player.InteractAlternate.performed += InteractAlternate_performed;
+    }
+
+    private void OnDisable()
+    {
+        playerInputActions.Player.Disable();
+        playerInputActions.Player.Interact.performed -= Interact_performed;
+        playerInputActions.Player.InteractAlternate.performed -= InteractAlternate_performed;
     }
 
     private void InteractAlternate_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -28,9 +38,14 @@ public class GameInput : MonoBehaviour
 
     public Vector2 GetMovementVectorNormalized()
     {
-        Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+        Vector2 inputVector = new Vector2();
 
-        inputVector = inputVector.normalized;
+        if(playerInputActions != null)
+        {
+            inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+
+            inputVector = inputVector.normalized;
+        }
 
         return inputVector;
     }
