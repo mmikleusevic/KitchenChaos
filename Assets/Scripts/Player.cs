@@ -163,7 +163,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     {
         this.kitchenObject = kitchenObject;
 
-        if(this.kitchenObject != null)
+        if (this.kitchenObject != null)
         {
             OnPickedSomething?.Invoke(this, EventArgs.Empty);
         }
