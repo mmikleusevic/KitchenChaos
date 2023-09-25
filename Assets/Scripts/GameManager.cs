@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void GameInput_OnInteractAction(object sender, EventArgs e)
     {
-        if(state == State.WaitingToStart)
+        if (state == State.WaitingToStart)
         {
             gamePlayingTimer = gamePlayingTimerMax;
             state = State.CountdownToStart;

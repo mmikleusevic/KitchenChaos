@@ -78,7 +78,7 @@ public class GameInput : MonoBehaviour
 
     public string GetBindingText(Binding binding)
     {
-        switch(binding)
+        switch (binding)
         {
             default:
             case Binding.Move_Up:

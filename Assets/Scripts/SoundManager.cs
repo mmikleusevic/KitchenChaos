@@ -70,7 +70,7 @@ public class SoundManager : MonoBehaviour
     private void PlaySound(AudioClip audioClip, Vector3 position, float volumeMultiplier = 1f)
     {
         AudioSource.PlayClipAtPoint(audioClip, position, volumeMultiplier * volume);
-    }   
+    }
 
     public void PlayFootstepsSound(Vector3 position, float volume = 1f)
     {
@@ -91,7 +91,7 @@ public class SoundManager : MonoBehaviour
     {
         volume += .1f;
 
-        if(volume > 1.01f)
+        if (volume > 1.01f)
         {
             volume = 0f;
         }
