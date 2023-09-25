@@ -37,7 +37,6 @@ public class MusicManager : MonoBehaviour
 
     public float GetVolume()
     {
-        Debug.Log(volume);
         return volume;
     }
 }
