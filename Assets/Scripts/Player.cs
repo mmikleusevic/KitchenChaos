@@ -55,6 +55,8 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
 
     private void Update()
     {
+        if (!IsOwner) return;
+
         HandleMovement();
         HandleInteractions();
     }
@@ -62,37 +64,6 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
     public bool IsWalking()
     {
         return isWalking;
-    }
-
-    private void HandleInteractions()
-    {
-        Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
-
-        if (moveDir != Vector3.zero)
-        {
-            lastInteractDir = moveDir;
-        }
-
-        float interactDistance = 2f;
-        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, layerMask))
-        {
-            if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
-            {
-                if (baseCounter != selectedCounter)
-                {
-                    SetSelectedCounter(baseCounter);
-                }
-            }
-            else
-            {
-                SetSelectedCounter(null);
-            }
-        }
-        else
-        {
-            SetSelectedCounter(null);
-        }
     }
 
     private void HandleMovement()
@@ -137,6 +108,37 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
         {
             float rotationSpeed = 10f;
             transform.forward = Vector3.Slerp(transform.forward, moveDir, rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    private void HandleInteractions()
+    {
+        Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
+        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+
+        if (moveDir != Vector3.zero)
+        {
+            lastInteractDir = moveDir;
+        }
+
+        float interactDistance = 2f;
+        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, layerMask))
+        {
+            if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
+            {
+                if (baseCounter != selectedCounter)
+                {
+                    SetSelectedCounter(baseCounter);
+                }
+            }
+            else
+            {
+                SetSelectedCounter(null);
+            }
+        }
+        else
+        {
+            SetSelectedCounter(null);
         }
     }
 
