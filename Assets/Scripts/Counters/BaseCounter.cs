@@ -1,4 +1,5 @@
 using System;
+using Unity.Netcode;
 using UnityEngine;
 
 public class BaseCounter : MonoBehaviour, IKitchenObjectParent
@@ -45,5 +46,11 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
     public void ClearKitchenObject()
     {
         kitchenObject = null;
+    }
+
+    public NetworkObject GetNetworkObject()
+    {
+        // TODO
+        return null;
     }
 }

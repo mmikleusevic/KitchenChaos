@@ -10,9 +10,7 @@ public class ContainerCounter : BaseCounter, IKitchenObjectParent
     {
         if (!player.HasKitchenObject())
         {
-            KitchenObject kitchenObject = KitchenObject.SpawnKitchenObject(kitchenObjectSO, player);
-
-            kitchenObject.SetKitchenObjectParent(player);
+            KitchenObject.SpawnKitchenObject(kitchenObjectSO, player);
 
             OnPlayerGrabbedObject.Invoke(this, EventArgs.Empty);
         }
