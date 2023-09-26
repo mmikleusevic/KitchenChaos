@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5656168885311630965}
   - component: {fileID: -2779994039525351082}
   - component: {fileID: -2598589406263212171}
+  - component: {fileID: 6123607903076488496}
   m_Layer: 0
   m_Name: MeatPattyUncooked
   m_TagString: Untagged
@@ -67,6 +68,18 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!114 &6123607903076488496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556437231005212725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604338826a94d004ea36b4c163450c54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7160977437677457216
 PrefabInstance:
   m_ObjectHideFlags: 0
