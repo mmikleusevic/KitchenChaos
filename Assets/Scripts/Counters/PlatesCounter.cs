@@ -25,19 +25,19 @@ public class PlatesCounter : BaseCounter
 
             if (GameManager.Instance.IsGamePlaying() && platesSpawnedAmount < platesSpawnedAmountMax)
             {
-                SpawnPlateServerRPC();
+                SpawnPlateServerRpc();
             }
         }
     }
 
     [ServerRpc]
-    private void SpawnPlateServerRPC()
+    private void SpawnPlateServerRpc()
     {
-        SpawnPlateClientRPC();
+        SpawnPlateClientRpc();
     }
 
     [ClientRpc]
-    private void SpawnPlateClientRPC()
+    private void SpawnPlateClientRpc()
     {
         platesSpawnedAmount++;
 
@@ -52,19 +52,19 @@ public class PlatesCounter : BaseCounter
             {
                 KitchenObject.SpawnKitchenObject(plateKitchenObjectSO, player);
 
-                InteractLogicServerRPC();
+                InteractLogicServerRpc();
             }
         }
     }
 
     [ServerRpc]
-    private void InteractLogicServerRPC()
+    private void InteractLogicServerRpc()
     {
-        InteractClientServerRPC();
+        InteractLogicClientRpc();
     }
 
     [ClientRpc]
-    private void InteractClientServerRPC()
+    private void InteractLogicClientRpc()
     {
         platesSpawnedAmount--;
 

@@ -14,12 +14,12 @@ public class ContainerCounter : BaseCounter, IKitchenObjectParent
         {
             KitchenObject.SpawnKitchenObject(kitchenObjectSO, player);
 
-            InteractLogicServerRPC();
+            InteractLogicServerRpc();
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void InteractLogicServerRPC()
+    private void InteractLogicServerRpc()
     {
         InteractLogicClientRpc();
     }
