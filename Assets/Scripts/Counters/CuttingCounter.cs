@@ -85,7 +85,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
     private void CutObjctServerRpc()
     {
         CutObjctClientRpc();
-        TestCuttingProgressDoneRpc();
+        TestCuttingProgressDoneServerRpc();
     }
 
     [ClientRpc]
@@ -105,7 +105,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void TestCuttingProgressDoneRpc()
+    private void TestCuttingProgressDoneServerRpc()
     {
         CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
