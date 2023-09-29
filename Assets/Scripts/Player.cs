@@ -36,7 +36,7 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
         GameInput.Instance.OnInteractAlternateAction += GameInput_OnInteractAlternateAction;
     }
 
-    public override void OnNetworkSpawn() 
+    public override void OnNetworkSpawn()
     {
         if (IsOwner)
         {
