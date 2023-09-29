@@ -82,7 +82,7 @@ public class StoveCounter : BaseCounter, IHasProgress
                 case State.Idle:
                     break;
                 case State.Frying:
-                    fryingTimer.Value += Time.deltaTime;                    
+                    fryingTimer.Value += Time.deltaTime;
 
                     if (fryingTimer.Value > fryingRecipeSO.fryingTimerMax)
                     {
@@ -131,7 +131,7 @@ public class StoveCounter : BaseCounter, IHasProgress
 
                     InteractLogicPlaceObjectOnCounterServerRpc(
                         KitchenGameMultiplayer.Instance.GetKitchenObjectSOIndex(kitchenObject.GetKitchenObjectSO())
-                        );                    
+                        );
                 }
             }
             else
