@@ -1,11 +1,12 @@
+using System;
 using System.Collections.Generic;
 using Unity.Netcode;
-using UnityEngine;
 
 public class CharacterSelectReady : NetworkBehaviour
 {
     public static CharacterSelectReady Instance { get; private set; }
 
+    public event EventHandler OnReadyChanged;
     private Dictionary<ulong, bool> playerReadyDictonary;
 
     private void Awake()
@@ -23,6 +24,8 @@ public class CharacterSelectReady : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void SetPlayerReadyServerRpc(ServerRpcParams serverRpcParams = default)
     {
+        SetPlayerReadyClientRpc(serverRpcParams.Receive.SenderClientId);
+
         playerReadyDictonary[serverRpcParams.Receive.SenderClientId] = true;
 
         bool allClientsReady = true;
@@ -39,5 +42,18 @@ public class CharacterSelectReady : NetworkBehaviour
         {
             Loader.LoadNetwork(Loader.Scene.GameScene);
         }
+    }
+
+    [ClientRpc]
+    private void SetPlayerReadyClientRpc(ulong clientId)
+    {
+        playerReadyDictonary[clientId] = true;
+
+        OnReadyChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public bool IsPlayerReady(ulong clientId)
+    {
+        return playerReadyDictonary.ContainsKey(clientId) && playerReadyDictonary[clientId];
     }
 }

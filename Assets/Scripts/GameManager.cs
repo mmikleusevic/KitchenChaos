@@ -63,7 +63,7 @@ public class GameManager : NetworkBehaviour
 
     private void SceneManager_OnLoadEventCompleted(string sceneName, UnityEngine.SceneManagement.LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
     {
-        foreach(ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
             Transform playerTransform = Instantiate(playerPrefab);
             playerTransform.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
@@ -81,7 +81,7 @@ public class GameManager : NetworkBehaviour
     }
     private void IsGamePaused_OnValueChanged(bool previousValue, bool newValue)
     {
-        if(isGamePaused.Value)
+        if (isGamePaused.Value)
         {
             Time.timeScale = 0f;
             OnMultiplayerGamePaused?.Invoke(this, EventArgs.Empty);
@@ -238,7 +238,7 @@ public class GameManager : NetworkBehaviour
 
     private void CheckGamePauseState()
     {
-        foreach(ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
             if (playerPausedDictionary.ContainsKey(clientId) && playerPausedDictionary[clientId])
             {
