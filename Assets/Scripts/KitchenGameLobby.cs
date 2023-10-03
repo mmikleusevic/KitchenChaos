@@ -233,4 +233,9 @@ public class KitchenGameLobby : MonoBehaviour
     {
         return joinedLobby;
     }
+
+    public bool LobbyExists()
+    {
+        return joinedLobby != null;
+    }
 }
