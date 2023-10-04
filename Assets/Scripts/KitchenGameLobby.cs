@@ -53,8 +53,8 @@ public class KitchenGameLobby : MonoBehaviour
 
     private void HandlePeriodicListLobbies()
     {
-        if (joinedLobby == null && 
-            AuthenticationService.Instance.IsSignedIn && 
+        if (joinedLobby == null &&
+            AuthenticationService.Instance.IsSignedIn &&
             SceneManager.GetActiveScene().name == Loader.Scene.LobbyScene.ToString())
         {
             listLobbiesTimer -= Time.deltaTime;
@@ -129,7 +129,7 @@ public class KitchenGameLobby : MonoBehaviour
         {
             return await RelayService.Instance.CreateAllocationAsync(KitchenGameMultiplayer.MAX_PLAYER_AMOUNT - 1);
         }
-        catch(RelayServiceException ex)
+        catch (RelayServiceException ex)
         {
             Debug.LogError(ex.Message);
 
